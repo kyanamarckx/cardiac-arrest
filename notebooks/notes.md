@@ -8,7 +8,7 @@
 - More data availble of men than women (725 vs 193)
 - 508 entries have a heart disease (1), 410 don't have one (0)
 
-### Column explanations
+### Column explanations (information retrieved from Kaggle)
 #### Age
 Age of the patient<br>
 [years]
@@ -58,16 +58,21 @@ Output class (target)<br>
 [1: heart disease, 0: normal]
 
 
+### Extra information about the columns
+
+
+
 ### Plot explanations and conclusions
 #### Kernel density plot
 Shows the counts of the numerical features. The title per plot contains the skewness of the values.<br>
 
-**Age:** skewness = -0,2 ; symmetrical distribution<br>
-**RestingBP:** skewness = 0,18 ; symmetrical distribution BUT we can see values that are probably not correct (left side of the curve)<br>
-**Cholesterol:** skewness = -0,61 ; in general it looks relatively normal distributed, with an exception of a bunch of zero-values which are also not correct, so we definitely have a left skewed distribution<br>
-**FastingBS:** this can be skipped because it is only a binary feature<br>
-**MaxHR:** <br>
-**Oldpeak:** skewness = 1,02 ; this is definitely a right skewed distribution (Oldpeak)
+- **Age:** skewness = -0,2 ; almost symmetrical distribution, note that the range of the ages goes from 28 years to 77 years<br>
+- **RestingBP:** skewness = 0,18 ; symmetrical distribution BUT we can see values that are probably not correct (left side of the curve)<br>
+- **Cholesterol:** skewness = -0,61 ; in general it looks relatively normal distributed, with an exception of a bunch of zero-values which are also not correct, so we definitely have a left skewed distribution<br>
+- **FastingBS:** skewness = 1,26 ; left skewed distribution because there are more patients that have a fasting blood sugar lower than 120 mg/dl - this can be skipped because it is a binary feature<br>
+- **MaxHR:** skewness = 0,14 ; symmetrical distribution<br>
+- **Oldpeak:** skewness = 1,02 ; definitely a right skewed distribution
+- **HeartDisease:** skewness = 0,22 ; almost symmetrical distribution, a little more patients have a heart disease than those who don't have one
 
 #### Pairplot
 
