@@ -237,7 +237,37 @@ Shows the relationship between two variables. The most interesting ones (visuall
 MaxHR and Oldpeak overall have the best distinction between heart disease and no heart disease with other features.
 
 #### Boxplot
+Compares central tendency (median), spread (IQR) and outliers between groups.
 
+- **Age vs HeartDisease:**
+  - Median age is higher for patients with heart disease
+  - The entire distribution is shifted upward for patients with heart disease
+  - Still substantial overlap
+  - Age is moderate indicator, but not sufficient if used alone
+- **RestingBP vs HeartDisease:**
+  - Medians are very similar
+  - Large overlap
+  - Some extreme outliers (including implausible values)
+  - RestingBP is a weak indicator if used alone
+- **Cholesterol vs HeartDisease:**
+  - Medians are almost identical
+  - Very large spread
+  - Many zeroes: likely missing or miscoded values
+  - Cholesterol is not informative in its currect form, zero-values should be cleaned or removed
+- **FastingBS vs HeartDisease:**
+  - Binary variable
+  - Heart disease group shows more 1's
+  - Works better as a binary indicator, not a continuous variable
+- **MaxHR vs HeartDisease:**
+  - Much lower median
+  - Clear downward shift for patients with heart disease
+  - Less overlap than most other features
+  - Strong negative indicator
+- **Oldpeak vs HeartDisease:**
+  - Higher median and wider spread for patients with heart disease
+  - Less overlap
+  - Many high-value outliers for patients with heart disease
+  - Strong positive indicator
 
 #### Correlation matrix
 
