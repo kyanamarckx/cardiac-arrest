@@ -170,7 +170,9 @@ This relationship makes these features particularly informative for machine lear
 
 ## Plot explanations and conclusions
 ### Kernel density plot
-Shows the counts of the numerical features. The title per plot contains the skewness of the values.<br>
+> Plot can be found [here](../media/01-kernel_density_plot.png).
+
+Shows the counts of the numerical features. The title per plot contains the skewness of the values. 
 
 - **Age:** 
   - Skewness = -0,2
@@ -195,7 +197,10 @@ Shows the counts of the numerical features. The title per plot contains the skew
   - Almost symmetrical distribution, a little more patients have a heart disease than those who don't have one - this can be skipped because it is a binary feature
 
 ### Pairplot
+> Plot can be found [here](../media/01-pairplot.png).
+
 Shows all combinations of numerical features.
+
 #### Diagonal
 Shows the distribution of one variable to see if it has a different distribution for people with and without heart disease.
 - **Age:**
@@ -236,6 +241,8 @@ Shows the relationship between two variables. The most interesting ones (visuall
 MaxHR and Oldpeak overall have the best distinction between heart disease and no heart disease with other features.
 
 ### Boxplot numerical features against HeartDisease
+> Plot can be found [here](../media/01-boxplot_numerical_vs_target.png).
+
 Compares central tendency (median), spread (IQR) and outliers between groups.
 
 - **Age vs HeartDisease:**
@@ -269,6 +276,8 @@ Compares central tendency (median), spread (IQR) and outliers between groups.
   - Strong positive indicator
 
 ### Countplot categorical features
+> Plot can be found [here](../media/01-countplot_categorical_features.png).
+
 Shows the counts of the categorical features against HeartDisease.
 
 - **Sex:**
@@ -284,6 +293,8 @@ Shows the counts of the categorical features against HeartDisease.
   - Majority of patients have a flat ST slope
 
 #### Against HeartDisease
+> Plot can be found [here](../media/01-countplot_categorical_features_vs_HeartDisease.png).
+
 - **Sex:**
   - More male patients with heart disease than male patients without heart disease
   - Less female patients with heart disease than female patients without heart disease
@@ -300,6 +311,8 @@ Shows the counts of the categorical features against HeartDisease.
   - Minority of patients that don't have heart disease have a downward ST slope
 
 ### Correlation matrix
+> Plot can be found [here](../media/01-correlation_matrix.png).
+
 Measures linear association between features.
 
 #### Correlations with HeartDisease (most important row)
