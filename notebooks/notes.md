@@ -1,68 +1,67 @@
-# :love_letter: Notes and conclusions of the notebooks
+# :love_letter: Notes and conclusions of ``01-exploration.ipynb``
 
-## 01-exploration.ipynb
-### General
+## General
 - 918 entries & 12 columns
 - 7 numerical (6 int64 + 1 float64) and 5 categorical
 - No null-values available
-- More data availble of men than women (725 vs 193)
+- More data available of men than women (725 vs 193)
 - 508 entries have a heart disease (1), 410 don't have one (0)
 
-### Column explanations (information retrieved from Kaggle)
-#### Age
+## Column explanations (information retrieved from Kaggle)
+### Age
 Age of the patient<br>
 [years]
 
-#### Sex
+### Sex
 Sex of the patient<br>
 [M: Male, F: Female]
 
-#### ChestPainType
+### ChestPainType
 Chest pain type<br>
 [TA: Typical Angina, ATA: Atypical Angina, NAP: Non-Anginal Pain, ASY: Asymptomatic]
 
-#### RestingBP
+### RestingBP
 Resting blood pressure<br>
 [mm Hg]
 
-#### Cholesterol
+### Cholesterol
 Serum cholesterol<br>
 [mg/dl] *(note: on Kaggle it says mm/dl, but I assume this is wrong because normally cholesterol is measured in mg/dl)*
 
-#### FastingBS
+### FastingBS
 Fasting blood sugar<br>
 [1: if FastingBS > 120 mg/dl, 0: otherwise]
 
-#### RestingECG
+### RestingECG
 Resting electrocardiagram results<br>
 [Normal: Normal, ST: having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of > 0.05 mV), LVH: showing probable or definite left ventricular hypertrophy by Estes' criteria]
 
-#### MaxHR
+### MaxHR
 Maximum heart rate achieved<br>
 [Numeric value between 60 and 202]
 
-#### ExerciseAngina
+### ExerciseAngina
 Exercise-induced angina<br>
 [Y: Yes, N: No]
 
-#### Oldpeak
+### Oldpeak
 Oldpeak = ST<br>
 [Numeric value measured in depression]
 
-#### ST_Slope
+### ST_Slope
 The slope of the peak exercise ST segment<br>
 [Up: upsloping, Flat: flat, Down: downsloping]
 
-#### HeartDisease
+### HeartDisease
 Output class (target)<br>
 [1: heart disease, 0: normal]
 
 
-### Clinical feature descriptions (except ``Age``, ``Sex``, ``MaxHR`` and ``HeartDisease``)
-#### Chest pain type (ChestPainType)
+## Clinical feature descriptions (except ``Age``, ``Sex``, ``MaxHR`` and ``HeartDisease``)
+### Chest pain type (ChestPainType)
 ``ChestPainType`` describes the type of chest pain experienced by the patient during physical activity or at rest. Chest pain is a key symptom used in the diagnosis of heart disease.
 
-##### Possible values
+#### Possible values
 - **TA (Typical Angina):**
   - Classic chest pain related to myocardial ischemia, usually triggered by extertion and relieved by rest
 - **ATA (Atypical Angina):**
@@ -72,47 +71,47 @@ Output class (target)<br>
 - **ASY (Asymptomatic):**
   - No chest pain symptoms, despite possible underlying heart disease
 
-##### Clinical relevance
+#### Clinical relevance
 Typical and asymptomatic chest pain types are strongly associated with heart disease risk.
 
-#### Resting blood pressure (RestingBP)
+### Resting blood pressure (RestingBP)
 ``RestingBP`` represents the patient's resting systolic blood pressure measured in millimeters of mercury (mm Hg).
 
-##### Clinical relevance
+#### Clinical relevance
 - Normal systolic blood pressure is typically below 120 mm Hg
 - Elevated blood pressure increases the workload of the heart and is a major risk factor for cardiovascular disease
 
-##### Data considerations
+#### Data considerations
 Extremely low or zero values are physiologically implausible and may indicate measurement or data-entry errors.
 
-#### Cholesterol
+### Cholesterol
 ``Cholesterol`` refers to the serum cholesterol level measured in milligrams per deciliter (mg/dl).
 
-##### Clinical relevance
+#### Clinical relevance
 - High cholesterol contributes to plaque formation in arteries (atherosclerosis)
 - This increases the risk of coronary artery disease and heart attacks
 
-##### Data considerations
+#### Data considerations
 - Zero or extremely low cholesterol values are medically unrealistic and should be carefully examined during preprocessing
 - The feature often shows a skewed distribution with possible outliers
 
-#### Fasting blood sugar (FastingBP)
+### Fasting blood sugar (FastingBP)
 ``FastingBS`` indicates whether the patient's fast blood sugar level exceeds 120 mg/dl.
 
-##### Values
+#### Values
 - **0:**
   - Fasting blood sugar &le; 120 mg/dl
 - **1:**
   - Fasting blood sugar &gt; 120 mg/dl
 
-##### Clinical relevance
+#### Clinical relevance
 - Elevated fasting blood sugar is associated with diabetes
 - Diabetes is a well-knows risk factor for cardiavascular disease
 
-#### Resting electrocardiagram (RestingECG)
+### Resting electrocardiagram (RestingECG)
 ``RestingECG`` describes the results of an electrocadriagram (ECG) perfromed while the patient is at rest.
 
-##### Possible values
+#### Possible values
 - **Normal:**
   - No significant ECG abnormalities
 - **ST:**
@@ -120,37 +119,37 @@ Extremely low or zero values are physiologically implausible and may indicate me
 - **LVH:**
   - Left ventricular hypertrpohy, often caused by chronic high blood pressure
 
-##### Clinical relevance
+#### Clinical relevance
 - Abnormal resting ECG findings can indicate structural or electrical heart problems.
 
-#### Exercise angina (ExerciseAngina)
+### Exercise angina (ExerciseAngina)
 ``ExerciseAngina`` indicates whether the patient experiences angina (chest pain) during physical exercise.
 
-##### Values
+#### Values
 - **Y:**
   - The patient experiences angina
 - **N:**
   - The patient doesn't experience angina
 
-##### Clinical relevance
+#### Clinical relevance
 - Exercise-induced angina is a strond indicator of reduced blood flow to the heart
 - It is commonly associated with coronary artery disease
 
-#### Oldpeak
+### Oldpeak
 ``Oldpeak`` measures the amount of ST-segment depression induced by exercise relative to rest, expressed in millimeters (mm)
 
-##### Clinical relevance
+#### Clinical relevance
 - ST-segment depression during exercise indicates myocardial ischemia
 - Higher Oldpeak values are associated with more severe heart disease
 
-##### Data considerations
+#### Data considerations
 - Oldpeak often has a right-skewed distribution
 - High values may represent clinically severe cases rather than noise
 
-#### ST slope (ST_Slope)
+### ST slope (ST_Slope)
 ``ST_Slope`` describes the slope of the ST segment during peak exercise.
 
-##### Possible values
+#### Possible values
 - **Up:**
   - Upsloping ST segment (generally normal)
 - **Flat:**
@@ -158,19 +157,19 @@ Extremely low or zero values are physiologically implausible and may indicate me
 - **Down:**
   - Downsloping ST segment (highly indicative of ischemia)
 
-##### Clinical relevance
+#### Clinical relevance
 - Flat and downsloping ST segments are strongly associated with heart disease
 - ST_Slope complements Oldpeak in assessing exercise-induced ECG changes
 
-#### Extra: relationship between Oldpeak and ST_Slope
+### Extra: relationship between Oldpeak and ST_Slope
 ``Oldpeak`` and ``ST_Slope`` are closely related indicators of exercise-induced myocardial ischemia:
 - Low Oldpeak with an upsloping ST segment is typically observed in healthy individuals
 - High Oldpeak combined with a flat or downsloping ST segment indicates increased cardiovascular risk
 
 This relationship makes these features particularly informative for machine learning models.
 
-### Plot explanations and conclusions
-#### Kernel density plot
+## Plot explanations and conclusions
+### Kernel density plot
 Shows the counts of the numerical features. The title per plot contains the skewness of the values.<br>
 
 - **Age:** 
@@ -195,9 +194,9 @@ Shows the counts of the numerical features. The title per plot contains the skew
   - Skewness = 0,22
   - Almost symmetrical distribution, a little more patients have a heart disease than those who don't have one - this can be skipped because it is a binary feature
 
-#### Pairplot
+### Pairplot
 Shows all combinations of numerical features.
-##### Diagonal
+#### Diagonal
 Shows the distribution of one variable to see if it has a different distribution for people with and without heart disease.
 - **Age:**
   - People with heart disease tend to be a little bit older
@@ -219,7 +218,7 @@ Shows the distribution of one variable to see if it has a different distribution
   - People with heart disease have a generally higher oldpeak
   - This is a very strong indicator
 
-##### Scatterplots
+#### Scatterplots
 Shows the relationship between two variables. The most interesting ones (visually):
 - **Age vs MaxHR:**
   - Clear negative relationship (the older the patient, the lower the maximum heart rate)
@@ -236,7 +235,7 @@ Shows the relationship between two variables. The most interesting ones (visuall
 
 MaxHR and Oldpeak overall have the best distinction between heart disease and no heart disease with other features.
 
-#### Boxplot
+### Boxplot numerical features against HeartDisease
 Compares central tendency (median), spread (IQR) and outliers between groups.
 
 - **Age vs HeartDisease:**
@@ -269,10 +268,41 @@ Compares central tendency (median), spread (IQR) and outliers between groups.
   - Many high-value outliers for patients with heart disease
   - Strong positive indicator
 
-#### Correlation matrix
+### Countplot categorical features
+Shows the counts of the categorical features against HeartDisease.
+
+- **Sex:**
+  - A lot more male patients than female patients (725 vs 193)
+- **ChestPainType:**
+  - Majority of patients is asymptomatic (496)
+- **RestingECG:**
+  - Majority of patients has a normal electrocardiogram in rest
+- **ExerciseAngina:**
+  - A bit more patients don't experience angina while exercising
+- **ST_Slope:**
+  - Minority of patients have a downscaling ST slope
+  - Majority of patients have a flat ST slope
+
+#### Against HeartDisease
+- **Sex:**
+  - More male patients with heart disease than male patients without heart disease
+  - Less female patients with heart disease than female patients without heart disease
+- **ChestPainType:**
+  - Most patients with heart disease were asymptomatic
+- **RestingECG:**
+  - Patients with normal electrocardiogram are almost evenly likely to have heart disease than to not have heart disease, and it contains in general the majority of patients
+  - Patients with ST-T wave abnormality are more likely to have heart disease than to not have heart disease
+- **ExerciseAngina:**
+  - Majority of patients that experience angina during exercise have heart disease
+  - Minority of patients that don't experience angina during exercise have heart disease
+- **ST_Slope:**
+  - Majority of patients that have a flat ST slope have heart disease
+  - Minority of patients that don't have heart disease have a downward ST slope
+
+### Correlation matrix
 Measures linear association between features.
 
-##### Correlations with HeartDisease (most important row)
+#### Correlations with HeartDisease (most important row)
 | Feature | Correlation | Strength | Interpretation |
 | :------ | :---------: | :------: | -------------- |
 | Oldpeak | +0,404 | Strong | Best positive predictor |
@@ -282,7 +312,7 @@ Measures linear association between features.
 | Cholesterol | -0,233 | Weak | Data quality issues |
 | RestingBP | +0,108 | Weak | Minimal standalone value |
 
-##### Feature-feature relationships
+#### Feature-feature relationships
 Important for multicollinearity:
 - **Age vs MaxHR:**
   - ``r = -0,382``
@@ -291,16 +321,41 @@ Important for multicollinearity:
   - ``r = +0,259``
   - Older patients show more ST depression
 
-#### Pairplot vs boxplots vs correlation matrix
+### Categorical feature importance (chi-square test)
+Chi-square test reveals whether there are significant associations between the categorical features and HeartDisease.
+
+#### Null hypothesis
+Categorical feature has no association with HeartDisease.
+
+#### Alternative hypothesis
+Categorical feature has an association with HeartDisease.
+
+#### Result
+- **Sex:**
+  - p-value is lower than 0.05
+  - Reject null hypothesis
+  - Proof of significant association with HeartDisease
+- **ChestPainType:**
+  - p-value is lower than 0.05
+  - Reject null hypothesis
+  - Proof of significant association with HeartDisease
+- **RestingECG:**
+  - p-value is lower than 0.05
+  - Reject null hypothesis
+  - Proof of significant association with HeartDisease
+- **ExerciseAngina:**
+  - p-value is lower than 0.05
+  - Reject null hypothesis
+  - Proof of significant association with HeartDisease
+- **ST_Slope:**
+  - p-value is lower than 0.05
+  - Reject null hypothesis
+  - Proof of significant association with HeartDisease
+
+#### Conclusion
+Clear indication that all categorical features are informative predictors of having heart disease. This support their relevance for predictive modeling.
+
+### Combination of plots
 - All strong relationships and correlations are visually confirmed
 - Weak correlations show heavy overlap
 - Confirms a consistent EDA
-
-## 02-preprocessing.ipynb
-
-
-## 03-modeling.ipynb
-
-
-## 04-evaluation.ipynb
-
