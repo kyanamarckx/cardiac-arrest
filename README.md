@@ -7,7 +7,7 @@ This project focuses on preprocessing and feature analysis rather than comparing
 The dataset used in this project is the [Heart Failure Prediction Dataset](https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction), publicly available on [Kaggle](https://www.kaggle.com/datasets/).
 
 ## :heartpulse: Installations
-Inside the `imports`-folder is a notebook `installations.ipynb` that contains all the installation commands for the usd packages in this project. Run this file based on what packages are already installed on your device.
+Inside the `imports`-folder is a notebook `installations.ipynb` that contains all the installation commands for the used packages in this project. Run this file based on what packages are already installed on your device.
 
 ## :heartpulse: 1 - Exploration
 Notebook `01-exploration.ipynb` dives into the exploration of the dataset; it executes the EDA (Exploratory Data Analysis) in multiple different ways. Some generated plots are also saved accordingly inside the `media`-folder. Notes and conclusions about the notebook can be found in ``01-notes.md``.
