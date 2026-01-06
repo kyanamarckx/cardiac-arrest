@@ -26,11 +26,11 @@ Resting blood pressure<br>
 
 ### Cholesterol
 Serum cholesterol<br>
-[mg/dl] *(note: on Kaggle it says mm/dl, but I assume this is wrong because normally cholesterol is measured in mg/dl)*
+[mg/dL] *(note: on Kaggle it says mm/dL, but I assume this is wrong because normally cholesterol is measured in mg/dL)*
 
 ### FastingBS
 Fasting blood sugar<br>
-[1: if FastingBS > 120 mg/dl, 0: otherwise]
+[1: if FastingBS > 120 mg/dL, 0: otherwise]
 
 ### RestingECG
 Resting electrocardiagram results<br>
@@ -85,7 +85,7 @@ Typical and asymptomatic chest pain types are strongly associated with heart dis
 Extremely low or zero values are physiologically implausible and may indicate measurement or data-entry errors.
 
 ### Cholesterol
-``Cholesterol`` refers to the serum cholesterol level measured in milligrams per deciliter (mg/dl).
+``Cholesterol`` refers to the serum cholesterol level measured in milligrams per deciliter (mg/dL).
 
 #### Clinical relevance
 - High cholesterol contributes to plaque formation in arteries (atherosclerosis)
@@ -96,13 +96,13 @@ Extremely low or zero values are physiologically implausible and may indicate me
 - The feature often shows a skewed distribution with possible outliers
 
 ### Fasting blood sugar (FastingBP)
-``FastingBS`` indicates whether the patient's fast blood sugar level exceeds 120 mg/dl.
+``FastingBS`` indicates whether the patient's fast blood sugar level exceeds 120 mg/dL.
 
 #### Values
 - **0:**
-  - Fasting blood sugar &le; 120 mg/dl
+  - Fasting blood sugar &le; 120 mg/dL
 - **1:**
-  - Fasting blood sugar &gt; 120 mg/dl
+  - Fasting blood sugar &gt; 120 mg/dL
 
 #### Clinical relevance
 - Elevated fasting blood sugar is associated with diabetes
@@ -185,7 +185,7 @@ Shows the counts of the numerical features. The title per plot contains the skew
   - In general it looks relatively normal distributed, with an exception of a bunch of zero-values which are also not correct, so we definitely have a left-skewed distribution
 - **FastingBS:**
   - Skewness = 1,26
-  - Left-skewed distribution because there are more patients that have a fasting blood sugar lower than 120 mg/dl - this can be skipped because it is a binary feature
+  - Left-skewed distribution because there are more patients that have a fasting blood sugar lower than 120 mg/dL - this can be skipped because it is a binary feature
 - **MaxHR:**
   - Skewness = 0,14
   - Symmetrical distribution
@@ -214,7 +214,7 @@ Shows the distribution of one variable to see if it has a different distribution
   - If you would imagine all the zero-values gone or replaced by the mean, based on what the rest of the distributions look like, it would probably overlap more than it does now
   - Hard to say if this is a strong indicator because it probably isn't totally accurate
 - **FastingBS:**
-  - People with heart disease are more likely to have a resting blood sugar value greater than 120 mg/dl (1)
+  - People with heart disease are more likely to have a resting blood sugar value greater than 120 mg/dL (1)
   - This is quite a strong indicator
 - **MaxHR:**
   - It is clearly visible that people who have a heart disease also have a lower maximum heart rate
