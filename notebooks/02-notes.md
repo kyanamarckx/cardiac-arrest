@@ -36,4 +36,4 @@ An imputer was used in both numerical en categorical pipelines; a median strateg
 The categorical pipeline also implements one-hot encoding. Note that the numerical pipeline doesn't implement a scaler; this is because tree-based models don't require them and since we will train our data on Random Forest and XGBoost (which are both tree-based classifiers), we don't need a scaler.
 
 ## Feature subsets
-Six different subsets were created to train the models on so we can see if feature subsets have an influence on model performance.
+Seven different subsets were created to train the models on so we can see if feature subsets have an influence on model performance.
